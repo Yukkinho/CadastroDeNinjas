@@ -1,0 +1,17 @@
+package piece.red.CadastroDeNinjas.Missões;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping
+public class MissaoControler {
+
+    @GetMapping("/missoes")
+    public String boasVindas() {
+
+        return "Bem vindo, datebayo!!.";
+
+}
+}

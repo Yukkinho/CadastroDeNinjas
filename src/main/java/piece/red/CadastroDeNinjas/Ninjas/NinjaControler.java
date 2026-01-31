@@ -1,4 +1,4 @@
-package piece.red.CadastroDeNinjas;
+package piece.red.CadastroDeNinjas.Ninjas;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +13,6 @@ public class NinjaControler {
 
         return "Essa é a minha primeira mensagem nessa perereca.";
 
-    }
 
-
+}
 }

@@ -1,10 +1,9 @@
-package piece.red.CadastroDeNinjas;
+package piece.red.CadastroDeNinjas.Ninjas;
 
+import jakarta.persistence.*;
+import piece.red.CadastroDeNinjas.Missões.MissaoModel;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastro")
@@ -13,9 +12,21 @@ public class NinjaModel {
     @Id
     @GeneratedValue
     private Long id;
+
     private String nome;
     private String email;
     private int idade;
+
+    @ManyToOne //muitos NINJAS para uma MISSAO
+    @JoinColumn( name= "missoes_id" )//juntar coluna de MISSOES com a de NINJAS, que cria outra coluna com o nome especificado dentre os parenteses
+                                    //o "missoes_id" é a foreing key
+    private MissaoModel missoes; //um ninja tem uma unica missao
+
+
+
+
+
+
 
     public Long getId() {
         return id;
