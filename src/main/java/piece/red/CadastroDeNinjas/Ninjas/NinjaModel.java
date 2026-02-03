@@ -16,10 +16,12 @@ public class NinjaModel {
     @Id
     @GeneratedValue
     private Long id;
+
     private String nome;
 
     @Column (unique = true)
     private String email;
+
     private int idade;
 
     @ManyToOne //muitos NINJAS para uma MISSAO
