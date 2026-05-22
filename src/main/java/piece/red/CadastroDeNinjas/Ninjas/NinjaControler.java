@@ -3,7 +3,7 @@ package piece.red.CadastroDeNinjas.Ninjas;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/ninjas")
 public class NinjaControler {
 
     @GetMapping("/boasVindas")
@@ -27,9 +27,9 @@ public class NinjaControler {
     }
 
     //Mostrar todos os ninjas (READ)
-    @GetMapping("/todos")
-    public String mostrarTodosNinjasCriados(){
-        return "Todos ninjas criados.";
+    @GetMapping("/listados")
+    public String mostrarTodosNinjasListados(){
+        return "Todos ninjas listados.";
     }
 
 

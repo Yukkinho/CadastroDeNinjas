@@ -20,4 +20,9 @@ public class MissaoControler {
     public String alternarMissao(){
        return "Missao alternada com sucesso";
    }
+
+   @DeleteMapping("/deletar")
+    public String deletarMissao(){
+       return "Missao deletada com sucesso";
+   }
 }
