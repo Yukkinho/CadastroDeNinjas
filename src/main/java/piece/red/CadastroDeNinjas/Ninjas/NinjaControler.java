@@ -2,16 +2,23 @@ package piece.red.CadastroDeNinjas.Ninjas;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/ninjas")
 public class NinjaControler {
 
-    @GetMapping("/boasVindas")
-    public String boasVindas() {
+    private NinjaService ninjaService;
 
-        return "Essa é a minha primeira mensagem nessa perereca.";
+    public NinjaControler ( NinjaService ninjaService ) {
+        this.ninjaService = ninjaService;
+    }
 
-}
+    //Mostrar todos os ninjas (READ)
+    @GetMapping("/listados")
+    public List<NinjaModel> listarNinjas (){
+        return ninjaService.listarNinjas();
+    }
 
     //Adicionar ninja (CREATE)
     @PostMapping("/criar")
@@ -26,11 +33,6 @@ public class NinjaControler {
         return "Todos ninjas criados por ID.";
     }
 
-    //Mostrar todos os ninjas (READ)
-    @GetMapping("/listados")
-    public String mostrarTodosNinjasListados(){
-        return "Todos ninjas listados.";
-    }
 
 
     //Alterar dados do ninja (UPDATE)
