@@ -20,7 +20,7 @@ public class NinjaService {
     }
 
     //Listar ninjas por ID
-    public NinjaModel listarNinjasPorId( long id ) {
+    public NinjaModel listarNinjasPorId( Long id ) {
 
         Optional<NinjaModel> ninjaPorId = ninjaRepository.findById(id);
         return ninjaPorId.orElse(null);
@@ -29,6 +29,13 @@ public class NinjaService {
     //Criar novo Ninja
     public NinjaModel criarNinja(NinjaModel ninja) {
         return ninjaRepository.save(ninja);
+    }
+
+    //Deletar ninja por Id - Tem que ser um metodo VOID (pois nao preciso retornar/mandar nada para o usuario)
+    public void deletarNinjaPorId(Long id) {
+
+      ninjaRepository.deleteById(id);
+
     }
 
 
