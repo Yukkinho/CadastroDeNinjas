@@ -14,6 +14,8 @@ public class NinjaControler {
         this.ninjaService = ninjaService;
     }
 
+
+
     //Mostrar todos os ninjas (READ)
     @GetMapping("/listar")
     public List<NinjaModel> listarNinjas (){
@@ -28,8 +30,10 @@ public class NinjaControler {
 
     //Adicionar ninja (CREATE)
     @PostMapping("/criar")
-    public String criarNinja(){
-        return "Ninja criado.";
+    public NinjaModel criarNinja(@RequestBody NinjaModel ninja){
+
+        return ninjaService.criarNinja(ninja);
+
     }
 
 
