@@ -15,10 +15,16 @@ public class NinjaControler {
     }
 
     //Mostrar todos os ninjas (READ)
-    @GetMapping("/listados")
+    @GetMapping("/listar")
     public List<NinjaModel> listarNinjas (){
         return ninjaService.listarNinjas();
     }
+
+    @GetMapping("/listar/{id}")
+    public NinjaModel listarNinjasPorId(@PathVariable long id){
+        return ninjaService.listarNinjasPorId(id);
+    }
+
 
     //Adicionar ninja (CREATE)
     @PostMapping("/criar")
